@@ -44,8 +44,8 @@ def display_result(is_compliant):
 
     turtle.done()
 def send_email(student_name, subject, body):
-    sender = 'rajibul45@outlook.com'
-    receiver = 'jinatpervin98@gmail.com'
+    sender = 'mail of sender'
+    receiver = 'receiver'
     subject = 'Uniform Violation'
     body = f'Student {student_name} is wearing a wrong uniform.'
 
@@ -56,9 +56,9 @@ def send_email(student_name, subject, body):
     msg['To'] = receiver
 
     try:
-        with smtplib.SMTP('smtp.office365.com', 587) as server:
+        with smtplib.SMTP('smtp.office365/gmail.com', 587) as server:
             server.starttls()
-            server.login(sender, 'nghgnboihcxxswvt')
+            server.login(sender, 'password of mail and if 2fa then u need app password')
             server.sendmail(sender, receiver, msg.as_string())
         print("Email sent successfully.")
     except Exception as e:
